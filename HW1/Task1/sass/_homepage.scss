@@ -11,12 +11,20 @@ body {
     margin-left: 50px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .centering {
     padding-left: calc(50% - $widthSide/2);
     padding-right: calc(50% - $widthSide/2);
 }
 
 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     &__nav {
         width: 100%;
@@ -41,6 +49,7 @@ body {
                 line-height: 50px;
                 letter-spacing: 0em;
                 text-align: left;
+                color: $titleTextColor;
             }
         }
 
@@ -50,6 +59,7 @@ body {
             align-items: center;
 
             &__button {
+                color: $titleTextColor;
                 font-family: "Jost";
                 font-size: 20px;
                 font-weight: 400;
@@ -116,7 +126,7 @@ body {
             padding: 26px 49px 26px 48px;
             border-radius: 18px;
             gap: 7px;
-            background: #292F36;
+            background: $titleTextColor;
             margin-top: 21px;
             cursor: pointer;
 
