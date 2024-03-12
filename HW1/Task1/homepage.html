@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./sass/main.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <script defer src="appBlog.js"></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
             </div>
             <div class="header__nav__right">
                 <a class="header__nav__right__button" href="./homepage.html">Home</a>
-                <a class="header__nav__right__button">Project</a>
+                <a class="header__nav__right__button" href="#">Project</a>
                 <a class="header__nav__right__button" href="./blog.html">Blog</a>
             </div>
         </div>
@@ -176,78 +178,28 @@
             </p>
         </div>
     </section>
-    <section class="blog_container">
-        <div class="blog_container__card">
-            <div class="blog_container__card__button" href="#">
-                <p class="blog_container__card__button__text">Get Started</p>
-            </div>
-            <img class="blog_container__card__img" src="./images/homepage/1.png" alt="Product image">
-            <div class="blog_container__card__title">
-                Let’s Get Solution For
-                Building Construction
-                Work
-            </div>
-            <div class="blog_container__text">
-                <div class="blog_container__text__content">
-                    <div class="blog_container__text__content__description">
-                        26 December,2022
-                    </div>
-                    <svg class="blog_container__text__content__arrow" width="70" height="70" viewBox="0 0 70 70"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                        <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+    <section class="news centering">
+        <div class="news__items">
+
+            <div v-for="(article, index) in articles" v-if="index < 3" class="news__items__item">
+                <div class="news__items__item__image">
+                    <p class="news__items__item__image__text">{{article.imgText}}</p>
+                    <img class="news__items__item__image__img" :src="'../Task1/images/blog/' + article.image"
+                        :alt="article.image">
+                </div>
+                <h2 class="news__items__item__title">{{article.itemTitle}}</h2>
+                <div class="news__items__item__wrap">
+                    <p class="news__items__item__wrap__text">{{article.itemData}}</p>
+                    <a class="news__items__item__wrap__arrow" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+                            <circle cx="26.5" cy="26.267" r="26" fill="#F4F0EC" />
+                            <path d="M24.271 32.9525L30.2139 26.2668L24.271 19.5811" stroke="#292F36" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="blog_container__card2">
-            <div class="blog_container__card2__button" href="#">
-                <p class="blog_container__card2__button__text">Living Design</p>
-            </div>
-            <img class="blog_container__card2__img2" src="./images/homepage/Blog_img2.png" alt="Product image">
-            <div class="blog_container__card2__title">
-                Low Cost Latest Invented
-                Interior Designing
-                Ideas.
-            </div>
-            <div class="blog_container__text2">
-                <div class="blog_container__text2__content2">
-                    <div class="blog_container__text2__content2__description2">
-                        22 December,2022
-                    </div>
-                    <svg class="blog_container__text2__content2__arrow2" width="70" height="70" viewBox="0 0 70 70"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                        <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="blog_container__card">
-            <div class="blog_container__card__button" href="#">
-                <p class="blog_container__card__button__text">Interior Design</p>
-            </div>
-            <img class="blog_container__card__img" src="./images/homepage/Blog_img3.png" alt="Product image">
-            <div class="blog_container__card__title">
-                Best For Any Office &
-                Business Interior
-                Solution
-            </div>
-            <div class="blog_container__text">
-                <div class="blog_container__text__content">
-                    <div class="blog_container__text__content__description">
-                        25 December,2022
-                    </div>
-                    <svg class="blog_container__text__content__arrow" width="70" height="70" viewBox="0 0 70 70"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                        <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </div>
+
         </div>
     </section>
     <footer class="footer centering">

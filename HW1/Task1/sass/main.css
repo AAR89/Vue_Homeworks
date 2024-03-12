@@ -288,143 +288,6 @@ a {
   text-align: center;
 }
 
-.blog_container {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  gap: 27px;
-  margin-top: 52px;
-}
-.blog_container__card {
-  width: 382px;
-  height: 521px;
-  border-radius: 75px;
-  border: 1px solid #E7E7E7;
-}
-.blog_container__card__button {
-  width: 129px;
-  height: 41px;
-  position: absolute;
-  margin-top: 249px;
-  margin-left: 41px;
-  border-radius: 8px;
-  background: #FFFFFF;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.blog_container__card__button__text {
-  font-family: "Jost";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-.blog_container__card__img {
-  width: 340px;
-  height: 290px;
-  margin: 21px;
-}
-.blog_container__card__title {
-  font-family: "DM Serif Display";
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 31px;
-  letter-spacing: 0.02em;
-  text-align: left;
-  width: 305px;
-  height: 70px;
-  margin: 0px 35px 30px 21px;
-}
-.blog_container__text {
-  margin: 30px 21px 37px 21px;
-}
-.blog_container__text__content {
-  display: flex;
-  align-items: center;
-  gap: 145px;
-}
-.blog_container__text__content__description {
-  font-family: "Jost";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-.blog_container__text__content__arrow {
-  width: 52px;
-  height: 52px;
-  left: 288px;
-}
-.blog_container__card2 {
-  width: 382px;
-  height: 521px;
-  border-radius: 75px;
-  border: 1px solid #E7E7E7;
-  background-color: #E7E7E7;
-}
-.blog_container__card2__button {
-  width: 129px;
-  height: 41px;
-  position: absolute;
-  margin-top: 249px;
-  margin-left: 41px;
-  border-radius: 8px;
-  background: #FFFFFF;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-.blog_container__card2__button__text {
-  font-family: "Jost";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-.blog_container__card2__img2 {
-  width: 340px;
-  height: 290px;
-  margin: 21px;
-}
-.blog_container__card2__title {
-  font-family: "DM Serif Display";
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 31px;
-  letter-spacing: 0.02em;
-  text-align: left;
-  width: 305px;
-  height: 70px;
-  margin: 0px 35px 30px 21px;
-}
-.blog_container__text2 {
-  margin: 30px 21px 37px 21px;
-}
-.blog_container__text2__content2 {
-  display: flex;
-  align-items: center;
-  gap: 145px;
-}
-.blog_container__text2__content2__description2 {
-  font-family: "Jost";
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.01em;
-  text-align: left;
-}
-.blog_container__text2__content2__arrow2 {
-  width: 52px;
-  height: 52px;
-  left: 288px;
-  color: #FFFFFF;
-}
-
 .footer {
   display: grid;
   grid-template-columns: 33% 23% 43%;
@@ -660,9 +523,10 @@ body {
 }
 .news__items {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  gap: 40px;
+  grid-template-columns: 33% 33% 33%;
+  gap: 30px;
   margin-top: 30px;
+  justify-content: space-between;
 }
 .news__items__item {
   width: 382px;
