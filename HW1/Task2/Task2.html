@@ -28,49 +28,84 @@
 </head>
 
 <body>
-    <div id="app">
-        <p>Создать кнопку "Перевернуть". При клике на кнопку текст кнопки должен перевернуться и отобразиться в обратном
-            порядке.</p>
-        <button @click="reverseText">{{buttonTextReverse}}</button>
-
-        <p>Есть список элементов. Пользователь может добавлять новые элементы списка с текстом “Новый элемент списка”
-            нажав на кнопку "Добавить".
-        </p>
-        <p>*Дополнительное задание: При клике на элемент списка он должен быть удален. (по желанию)</p>
-        <button @click="addElement">Добавить элемент в список</button>
-        <button @click="remove">Удалить элемент</button>
-        <ul>
-            <li class="newEl" v-for="item in items" :key="item.id" v-text="newEl" onclick="this.remove()"></li>
-        </ul>
-
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <style>
+        .table {
+            margin: 0 auto;
+            width: 600px;
+            border-collapse: collapse;
+            border: 3px solid purple;
+        }
+
+        .table__cell {
+            width: 50%;
+            border: 3px solid purple;
+            text-align: center;
+        }
+    </style>
+
+    <!--Вы разрабатываете приложение для отображения и сортировки списка товаров. -->
+    <!--У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. -->
+    <!--Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене-->
+    <!--(по возрастанию и по убыванию).-->
+    <div id="app">
+        <table class="table">
+            <caption class=table__header">
+                <h1>Корзина</h1>
+            </caption>
+            <tr class="table__row table__head">
+                <th class="table__cell">
+                    <h2 v-on:click="sortCol" data-sort-key="name" data-check-ascending="false">Наименование</h2>
+                </th>
+                <th class="table__cell">
+                    <h2 v-on:click="sortCol" data-sort-key="price" data-check-ascending="false">Цена</h2>
+                </th>
+            </tr>
+            <tbody class="table__content">
+                <tr v-for="product in products" class="table__row">
+                    <td class="table__cell">{{product.name}}</td>
+                    <td class="table__cell">{{product.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
+
         new Vue({
             el: '#app',
             data: {
-                buttonTextReverse: 'Перевернуть текст',
-                newEl: 'Новый элемент списка',
-                items: ['Новый элемент списка']
+                products: [
+                    { name: 'Молоко', price: 35 },
+                    { name: 'Хлеб', price: 25 },
+                    { name: 'Яблоки', price: 23 },
+                    { name: 'Мясо', price: 54 },
+                ]
             },
             methods: {
-                reverseText() {
-                    let text = this.buttonTextReverse.split('').reverse().join('');
-                    this.buttonTextReverse = text;
-                },
-                addElement() {
-                    this.items.push(this.newEl)
-                },
-                remove() {
-                    this.items.pop()
+                sortCol({ target, currentTarget }) {
+                    if (!(currentTarget.dataset.checkAscending === "true")) {
+                        this.products.sort((a, b) => sortFunction(a, b, target.dataset.sortKey, true));
+                        currentTarget.dataset.checkAscending = "true";
+                    } else {
+                        this.products.sort((a, b) => sortFunction(a, b, target.dataset.sortKey, false));
+                        currentTarget.dataset.checkAscending = "false";
+                    }
+                    function sortFunction(a, b, sortKey, checkAscending) {
+                        const valueA = String(a[sortKey]).toLowerCase();
+                        const valueB = String(b[sortKey]).toLowerCase();
+
+                        if (checkAscending) {
+                            return valueA.localeCompare(valueB);
+                        } else {
+                            return valueB.localeCompare(valueA);
+                        }
+                    }
                 }
-            },
-            computed: {
-
             }
-        });
+        })
     </script>
-
 </body>
 
 </html>
