@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog details</title>
+    <link rel="stylesheet" href="./sass/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
@@ -12,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./sass/main.css">
+    <link rel="stylesheet" href="../Task1/sass/main.css">
     <script defer src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
-    <script defer src="../Task1/app/appBlog.js"></script>
+    <script defer src="../Task1/app/appBlogDetails.js"></script>
 </head>
 
 <body>
@@ -38,93 +39,12 @@
     </header>
     <section class="blog_banner centering">
         <div class="blog_banner__img">
-            <img src="../Task1/images/blog/Banner_img.svg" alt="">
-        </div>
-        <div class="blog_banner__container">
-            <h1 class="blog_banner__container__title">Articles & News</h1>
-            <p class="blog_banner__container__text">Home / Blog</p>
+            <img src="../Task1/images/blogDetails/blog_img.png" alt="">
         </div>
     </section>
-    <section class="blog_blog__container">
-        <div class="blog_blog__container__card">
-            <div class="blog_blog__container__card__title">Latest Post</div>
-            <div class="blog_blog__container__card__post">
-                <img class="blog_blog__container__card__post__img" src="./images/blog/Post.svg" alt="Post image">
-                <div class="blog_blog__container__card__post__content">
-                    <h2 class="blog_blog__container__card__post__content__title">
-                        Low Cost Latest Invented Interior Designing Ideas
-                    </h2>
-                    <p class="blog_blog__container__card__post__content__text">
-                        Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere
-                        in.Contrary to popular belief.
-                        <br><br>
-                        <span>Lorem Ipsum is not simply random text. It has roots in a piece of classica.</span>
-                    </p>
-                    <div class="blog_blog__container__card__post__content__date">
-                        <div class="blog_blog__container__card__post__content__date__description">
-                            26 December,2022
-                        </div>
-                        <svg class="blog_blog__container__card__post__content__date__arrow" width="70" height="70"
-                            viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="35" cy="35" r="35" fill="#F4F0EC" />
-                            <path d="M32 44L40 35L32 26" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="blog-details-page center">
+        <article-components></article-components>
     </section>
-    <section class="news centering">
-        <h2 class="news__title">Articles & News</h2>
-        <div class="news__items">
-
-            <div v-for="(article, index) in articles" v-if="index < 6" class="news__items__item">
-                <div class="news__items__item__image">
-                    <p class="news__items__item__image__text">{{article.imgText}}</p>
-                    <img class="news__items__item__image__img" :src="'../Task1/images/blog/' + article.image"
-                        :alt="article.image">
-                </div>
-                <h2 class="news__items__item__title">{{article.itemTitle}}</h2>
-                <div class="news__items__item__wrap">
-                    <p class="news__items__item__wrap__text">{{article.itemData}}</p>
-                    <a class="news__items__item__wrap__arrow" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
-                            <circle cx="26.5" cy="26.267" r="26" fill="#F4F0EC" />
-                            <path d="M24.271 32.9525L30.2139 26.2668L24.271 19.5811" stroke="#292F36" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <div class="pagination">
-        <div class="pagination__container">
-            <a class="pagination__container__circle" href="#">
-                <div class="pagination__container__number">01</div>
-            </a>
-        </div>
-        <div class="pagination__container">
-            <a class="pagination__container__circle" href="#">
-                <div class="pagination__container__number">02</div>
-            </a>
-        </div>
-        <div class="pagination__container">
-            <a class="pagination__container__circle" href="#">
-                <div class="pagination__container__number">03</div>
-            </a>
-        </div>
-        <div class="pagination__container">
-            <a class="pagination__container__circle" href="#">
-                <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.55714 15L7.5 8.31429L1.55714 1.62857" stroke="#292F36" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-    </div>
     <footer class="footer centering">
         <div class="footer__logos">
             <div class="footer__logos__logo">
