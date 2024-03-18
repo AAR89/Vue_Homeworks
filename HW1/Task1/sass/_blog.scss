@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-body {
-    width: 1200px;
-    margin-left: 50px;
-}
-
 .centering {
     padding-left: calc(50% - $widthSide/2);
     padding-right: calc(50% - $widthSide/2);
