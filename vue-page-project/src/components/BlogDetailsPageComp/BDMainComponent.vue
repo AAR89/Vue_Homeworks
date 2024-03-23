@@ -2,11 +2,7 @@
   <section class="blogDetails__main center">
     <div class="blog-details__container">
       <div class="blog-details">
-        <div
-          class="article"
-          v-for="(article, index) in filterArticle"
-          :key="index"
-        >
+        <div class="article" v-for="(article, index) in filterArticle" :key="index">
           <h2 class="article__title">{{ article.title }}</h2>
           <img class="article__img" :src="require('../../img/' + article.img)" :alt="article.img" />
           <div class="article__info">
@@ -66,11 +62,7 @@
               </p>
             </div>
           </div>
-          <img
-            class="article__img"
-            src="../../img/blogDetails/kitchen2.svg"
-            alt="article 1_1"
-          />
+          <img class="article__img" src="../../img/blogDetails/kitchen2.svg" , alt="article 1_1" />
           <p class="article__text">
             Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
             turpmaximus.posuere in.Contrary to popular belief.There are many
@@ -84,11 +76,8 @@
         <div class="tags__buttons-wrap">
           <h2 class="tags__title">Tags</h2>
           <div class="tags__buttons">
-            <button
-              v-for="(btn, index) in buttonList" :key="index" 
-              @click="filterClick(btn)"
-              class="tags__buttons-item" 
-            >
+            <button v-for="(btn, index) in buttonList" :key="index" @click="filterClick(btn)"
+              class="tags__buttons-item">
               {{ btn }}
             </button>
           </div>
@@ -159,6 +148,7 @@ export default {
 
 <style lang="scss" scoped>
 $fontMain: "DM Serif Display";
+
 .blog-details__container {
   margin-top: 200px;
   display: flex;
@@ -171,6 +161,7 @@ $fontMain: "DM Serif Display";
 
 .article {
   margin-bottom: 96px;
+
   &__title {
     color: #292f36;
     font-family: $fontMain;
@@ -181,11 +172,13 @@ $fontMain: "DM Serif Display";
     letter-spacing: 1px;
     margin-bottom: 20px;
   }
+
   &__img {
     margin-top: 21px;
     margin-bottom: 35px;
     border-radius: 50px;
   }
+
   &__info {
     margin-top: 11px;
     display: flex;
@@ -204,6 +197,7 @@ $fontMain: "DM Serif Display";
       cursor: pointer;
     }
   }
+
   &__text {
     color: #4d5053;
     font-size: 22px;
@@ -213,6 +207,7 @@ $fontMain: "DM Serif Display";
     line-height: 150%;
     letter-spacing: 0.22px;
   }
+
   &__list {
     margin-top: 24px;
     margin-bottom: 23px;
@@ -222,10 +217,12 @@ $fontMain: "DM Serif Display";
     align-items: flex-start;
     gap: 32px;
     list-style-position: 10px 0;
+
     &-item {
       display: flex;
       align-items: flex-start;
       gap: 14px;
+
       &_number {
         color: #cda274;
         font-family: $fontMain;
@@ -256,6 +253,7 @@ $fontMain: "DM Serif Display";
     flex-direction: column;
     gap: 24px;
   }
+
   &__title {
     color: #292f36;
     font-family: $fontMain;
@@ -265,11 +263,13 @@ $fontMain: "DM Serif Display";
     line-height: 125%;
     letter-spacing: 0.5px;
   }
+
   &__buttons {
     display: flex;
     flex-wrap: wrap;
 
     gap: 10px;
+
     &-item {
       padding-left: 30px;
       padding-right: 30px;
@@ -322,6 +322,7 @@ $fontMain: "DM Serif Display";
     letter-spacing: 0.02em;
     text-align: center;
   }
+
   &__text {
     margin-top: -30px;
     width: 375px;
